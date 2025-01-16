@@ -1,0 +1,117 @@
+@media (min-width: 400px){
+    #principal-video{
+        height: 800px;
+    }
+    #secundario-video{
+        height: 700px;
+    }
+    .caixa-pai-video{
+        height: 500px;
+    }
+    .video{
+        border: 1px solid rgba(255, 255, 255, 0.459);
+        height: 400px;
+    }
+
+    .play-arrow{
+        font-size: 35px;
+    }
+
+    .caixa-conteudo-video{
+        margin-top: 2rem;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 750px){
+    #caixa-btn{
+        display: flex;
+    }
+
+    #register, #sign-in{
+        width: 80px;
+        display: block;
+    }
+
+    
+    #secao-principal{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 85vh;
+    }
+
+    #artigo-principal{
+        flex-basis: 300px;
+    }
+
+    .artigo-secundario{
+        position: relative;
+        top: -20%;
+    }
+    
+    .artigo{
+        flex-basis: 200px;
+    }
+
+    .artigo .caixa-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .artigo-video{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: -43%;
+        left: -23%;
+    }
+
+    #caixa-artigo-explore{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .artigo-explore{
+        width: 100%;
+    }
+
+    #caixa-artigo-explore .caixa-img-explore{
+        width: 100%;
+    }
+
+    .caixa-img-explore img{
+        height: 250px;
+        width: 300px;
+    }
+
+}
+
+@media (min-width: 800px){
+    .artigo-video{
+        position: relative;
+        left: -20%;   
+    }
+
+    .caixa-pai-video{
+        max-width: 500px;
+    }
+
+    .video{
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 900px) {
+    .artigo-video{
+        position: relative;
+        left: -160px;
+    }
+}

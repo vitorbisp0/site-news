@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon" />
+
+    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+            
+        }
+
+        #secao-principal img:hover, #caixa-artigo-explore img:hover{
+            transform: scale(0.9);
+            z-index: -1;
+            transition: all .2s linear;
+            cursor: pointer;
+        }
+
+        #register, #sign-in{
+            display: none;
+        }
+
+        #secao-principal{
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #principal-video a{
+            color: white;
+            text-decoration: none;
+        }
+
+        #principal-video a:hover{
+            text-decoration: underline;
+        }
+        
+
+        #menu-lista ul{
+            list-style-type: none;
+        }
+
+        #menu-burguer:hover{
+            cursor: pointer;
+        }
+
+        .title-caixa .title-list{
+            color: black;
+            font-weight: bold;
+            display: block;
+            text-decoration: none;
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem
+        }
+
+        .sub-lista{
+            padding-left: 3rem;
+        }
+
+        .sub-lista > li{
+            padding: 0.5rem;
+        }
+
+        .caixaLista{
+            display: none;
+        }
+
+        .artigo{
+            padding: 15px;
+        }
+
+        .artigo h1{
+            font-weight: bold;
+            padding-top: .5em;
+            font-size: 1.5em;
+        }
+
+        .caixa-conteudo-artigo{
+            border-bottom: 1px solid black;
+        }
+
+        img{
+            height: 400px;
+            width: 100%;
+        }
+
+
+        #principal-video{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 500px;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+        }
+
+        #secundario-video{
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 450px;
+        }
+
+        .caixa-video{
+            width: 100%;
+            height: 50%;
+        }
+
+        .caixa-video img{
+            height: 100%;
+        }
+
+        .video {
+            width: 40vw;
+            height: 95%;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .caixa-pai-video{
+            width: 65vw;
+            margin-right: 2rem;
+        }
+
+        .video-thumb{
+            display: block;
+            height: 50%;
+        }
+
+        .play-arrow{
+            position: relative;
+            display: inline-block;
+            transform: translateY(-100%);
+            background-color: #000;
+            color: white;
+        }
+        .btn-lista:hover{
+            background-color: #0000002a;
+            border-left: 2px solid red;
+            transition: .9;
+        }
+        
+        .sub-lista li:hover{
+            background-color: #0000002a;
+            border-bottom: 2px red solid;
+            transition: border .2s;
+        }    
+
+        .img-explore-principal{
+            width: 100%; 
+            height: 400px;
+        }
+        #principal-video{
+            width: 90vw; height: 70vh;
+        }
+    </style>
+</head>
+<body style="height: 100vh;">
+    <!-- Header -->
+    <header id="header" class="bg-white" style="margin: 0; padding: 0; position: fixed; top: 0; left: 0; width: 100vw;z-index: 1000; box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.219);">
+
+        <div id="caixa-logo" class="p-2 d-flex">
+            <div class="caixa-menu-btn d-flex p-1">
+                <span id="menu-burguer"  class="material-symbols-outlined d-inline-block fs-1">menu</span>
+                <span id="menu_search" class="material-symbols-outlined d-inline-block fs-1 ps-3">search</span>
+            </div>
+            <span class="d-flex justify-content-center align-items-center w-75 p-1" style="height: 2.5rem;">
+                <a href="#index.html" class="h-100 w-100 d-flex justify-content-center">
+                    <img src="/imagens/logo-bbc.png" alt="" class="" style="width: 200px; height: 30px;">
+                </a>
+            </span>
+            <div id="caixa-btn">
+                <button id="register" class="px-2 py-1 me-2 bg-black text-white border border-0">Register</button>
+
+                <button id="sign-in" class="bg-white border border-0">Sign In</button>
+            </div>
+        </div>
+
+        <nav id="menu-nav" class="d-none">
+            <div id="caixa-pesquisa" class="bg-secondary d-flex flex-row-reverse justify-content-center p-2">
+
+                <span class="material-symbols-outlined fs-1 text-white bg-black d-flex align-items-center">search</span>
+                <input type="text" name="search-area" id="search-area" class="p-2 w-100" placeholder="Search news, topics and more">
+            </div>
+            <div id="caixa-login" class="container d-flex justify-content-center p-2">
+                <button id="register" class="px-2 py-1 me-2 bg-black text-white border border-0">Register</button>
+                <button id="sign-in" class="bg-white border border-0">Sign In</button>
+            </div>
+            <div id="menu-lista">
+                <ul class="p-0 fs-5">
+
+                    <li class="title-caixa">
+                        <a href="#home" class="btn-lista title-list text-decoration-none" onclick="toggleMenu('op1')">Home</a>
+                        <ul class="sub-lista" id="op1">
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="title-caixa">
+                        <a href="#home" class="btn-lista title-list text-decoration-none" onclick="toggleMenu('op2')">Home</a>
+                        <ul class="sub-lista" id="op2">
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="title-caixa">
+                        <a href="#home" class="btn-lista title-list text-decoration-none" onclick="toggleMenu('op3')">Home</a>
+                        <ul class="sub-lista" id="op3">
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-black">Home-filho</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main" class="d-flex flex-column align-items-center ">
+        <div id="news-logo-caixa" class="pb-2 mb-5" style="margin-top: 10vh; width: 90%; border-bottom: 2px solid black;">
+           <h1 class="text-danger fw-bolder fs-2">NEWS</h1>
+        </div>
+        
+        <section id="secao-principal" class="">
+            <!-- Part 1 -->
+            <article id="artigo-principal" class="artigo" class="d-flex flex-column" style="padding: 0; order: 2;">
+                <article class="caixa-img">
+                    <img src="/imagens/img-test.webp" alt="" style="width: 100%; height: 400px;">
+                </article>
+                <article class="caixa-conteudo-artigo p-3">
+                    <h1>Officia, itaque explicabo, minima quasi facilis sapiente quos numquam repellendus atque sint illo harum recusandae esse. </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                    <span>1 hr ago | US Canada</span>
+                </article>
+            </article>
+
+                <article class="artigo artigo-secundario" class="d-flex">
+                    <article class="caixa-img">
+                        <img src="/imagens/img-test.webp" alt="">
+                    </article>
+                    <article class="caixa-conteudo-artigo">
+                        <h1>Título artigo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+                <article class="artigo artigo-secundario" class="d-flex">
+                    <article class="caixa-img">
+                        <img src="/imagens/img-test.webp" alt="">
+                    </article>
+                    <article class="caixa-conteudo-artigo">
+                        <h1>Título artigo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+
+
+            <!-- Part 2 -->
+            <div class="artigo-video" style="order: 3;">
+                <article class="d-flex artigo">
+                    <span class="material-symbols-outlined fs-1 pt-2">play_arrow</span>
+                    <article class="caixa-conteudo-artigo-video">
+                        <h1>Título artigo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+                
+                <article class="d-flex artigo" style="">
+                    <span class="material-symbols-outlined fs-1 pt-2">play_arrow</span>
+                    <article class="caixa-conteudo-artigo-video">
+                        <h1 style="">Título artigo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+            </div>
+
+        </section>
+
+        <section id="explore"  class="d-flex flex-column pb-2 align-items-center">
+            <div id="caixa-explore" style="margin-top: 3vh; width: 90vw; border-top: 1px solid black;">
+                <h2 class="fw-bolder pt-2 fs-4">More explore</h2>
+            </div>
+
+            <article id="caixa-artigo-explore">
+                <article class="artigo-explore artigo" style="padding: 0;">
+                    <article class="caixa-img-explore">
+                        <img class="img-explore-principal" src="/imagens/img-test.webp" alt="">
+                    </article>
+                    <h2>Título artigo</h2>
+                    <article class="caixa-conteudo-artigo">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+                <article class="artigo-explore artigo">
+                    <article class="caixa-img-explore">
+                        <img src="/imagens/img-test.webp" alt="">
+                    </article>
+                    <h2>Título artigo</h2>
+                    <article class="caixa-conteudo-artigo">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</p>
+                        <span>1 hr ago | US Canada</span>
+                    </article>
+                </article>
+            </article>
+
+            <article id="principal-video" class="bg-black text-white">
+                <div>
+                    <hr>
+                    <div class="caixa-must-watch">
+                        <h2>Must Watch</h2>
+                    </div>
+                </div>
+                <div id="btn-video-container">
+                    <button id="scrollLeft" class="bg-black border text-white fw-bold px-3">&lt;</button>
+                    <button id="scrollRight" class="bg-black border text-white fw-bold px-3">&gt;</button>
+                </div>
+
+                <div id="secundario-video" class="d-flex">
+
+                    <div class="caixa-pai-video">
+                        <div class="video">
+                            <article class="caixa-video">
+                                <img src="/imagens/news-paper.jpg" class="video-thumb">
+                                <span class="material-symbols-outlined play-arrow">play_arrow</span>
+                            </article>
+                            <article class="caixa-conteudo-video">
+                                <p><a href="#" target="_self">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</a></p>
+                                <span>1 hr ago | US Canada</span>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="caixa-pai-video">
+                        <div class="video">
+                            <article class="caixa-video">
+                                <img src="/imagens/news-paper.jpg" class="video-thumb">
+                                <span class="material-symbols-outlined play-arrow">play_arrow</span>
+                            </article>
+                            <article class="caixa-conteudo-video">
+                                <p><a href="#" target="_self">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</a></p>
+                                <span>1 hr ago | US Canada</span>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="caixa-pai-video">
+                        <div class="video">
+                            <article class="caixa-video">
+                                <img src="/imagens/news-paper.jpg" class="video-thumb">
+                                <span class="material-symbols-outlined play-arrow">play_arrow</span>
+                            </article>
+                            <article class="caixa-conteudo-video">
+                                <p><a href="#" target="_self">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</a></p>
+                                <span>1 hr ago | US Canada</span>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="caixa-pai-video" style="margin-right: 0;">
+                        <div class="video">
+                            <article class="caixa-video">
+                                <img src="/imagens/news-paper.jpg" class="video-thumb">
+                                <span class="material-symbols-outlined play-arrow">play_arrow</span>
+                            </article>
+                            <article class="caixa-conteudo-video" >
+                                <p><a href="#" target="_self">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum fuga dolor cum blanditiis</a></p>
+                                <span>1 hr ago | US Canada</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+    </footer>
+
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
